@@ -1,5 +1,5 @@
 import React from "react";
-import LoginBtn from "./LoginBtn";
+import UserBox from "./UserBox";
 
 type Props = {};
 
@@ -20,7 +20,7 @@ const NavBar = (props: Props) => {
           <a href="#">Contact</a>
         </li>
         <li>
-          <LoginBtn />
+          <UserBox />
         </li>
       </ul>
     </div>
