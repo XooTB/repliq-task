@@ -1,12 +1,23 @@
+"use client";
+
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import LoginForm from "@/components/LoginForm";
+import { useStore } from "zustand";
+import AuthStore from "@/stores/AuthStore";
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
 const page = (props: Props) => {
+  const { user } = useStore(AuthStore);
+  const router = useRouter();
+
+  if (user) {
+    router.push("/dashboard");
+  }
   return (
     <div className="min-h-screen w-full flex py-20 justify-center">
       <div className="w-full md:w-1/2 xl:w-1/3">
