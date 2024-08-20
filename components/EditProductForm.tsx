@@ -42,6 +42,7 @@ const EditProductForm = ({ product, handleTrigger }: Props) => {
       <div className="py-5">
         <label className="font-semibold">Product name</label>
         <Input
+          type="text"
           placeholder="Product Name"
           value={currentProduct.name}
           className="mb-3"
@@ -50,6 +51,7 @@ const EditProductForm = ({ product, handleTrigger }: Props) => {
         />
         <label className="font-semibold">Product Price</label>
         <Input
+          type="number"
           placeholder="Price"
           value={currentProduct.price}
           className="mb-3"
@@ -58,6 +60,7 @@ const EditProductForm = ({ product, handleTrigger }: Props) => {
         />
         <label className="font-semibold">Product Stock</label>
         <Input
+          type="number"
           placeholder="Stock"
           value={currentProduct.stock}
           className="mb-3"

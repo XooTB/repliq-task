@@ -1,15 +1,15 @@
 "use client";
 
 import useGetProducts from "@/hooks/useGetProducts";
-import ProductStore, { Product } from "@/stores/ProductStore";
-import React, { useEffect, useState } from "react";
+import ProductStore from "@/stores/ProductStore";
+import React, { useEffect } from "react";
 import { useStore } from "zustand";
 import ProductTile from "./ProductTile";
 
 type Props = {};
 
 const ProductsView = (props: Props) => {
-  const { isLoading, error, getProducts } = useGetProducts();
+  const { getProducts } = useGetProducts();
   const { products } = useStore(ProductStore);
 
   useEffect(() => {
