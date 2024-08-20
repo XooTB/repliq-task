@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { match } from "assert";
 import { Activity, CreditCard, DollarSign, Users } from "lucide-react";
 import { Just_Me_Again_Down_Here } from "next/font/google";
@@ -144,7 +145,7 @@ const page = (props: Props) => {
           <p className="text-sm text-gray-500 pb-4">
             You made 288 sales this week.
           </p>
-          <div className=" h-[540px] overflow-y-scroll">
+          <ScrollArea className="h-[540px]">
             {salesData.map((sale) => (
               <SalesCard
                 name={sale.name}
@@ -153,7 +154,7 @@ const page = (props: Props) => {
                 key={sale.email}
               />
             ))}
-          </div>
+          </ScrollArea>
         </div>
       </div>
     </div>

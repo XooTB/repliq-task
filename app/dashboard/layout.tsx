@@ -23,7 +23,7 @@ export default function DashboardLayout({
     return (
       <div className="min-h-screen px-20">
         <div className="flex gap-10">
-          <div className="w-1/5 bg-slate-200 px-5 py-10 rounded-lg flex flex-col gap-2">
+          <div className="w-1/5 bg-slate-200 px-5 py-10 rounded-lg flex flex-col gap-2 h-fit">
             {dashboardMenu.map((menu) => (
               <MenuItem key={menu.name} {...menu} />
             ))}
