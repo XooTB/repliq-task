@@ -1,3 +1,5 @@
+import { GorwthChart } from "@/components/GrowthChart";
+import SalesCard from "@/components/SalesCard";
 import {
   Card,
   CardContent,
@@ -36,17 +38,75 @@ const overviewCards = [
   },
 ];
 
+const salesData = [
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+  {
+    name: "Olivia martin",
+    email: "example@example.com",
+    amount: "$155.99",
+  },
+];
+
 const page = (props: Props) => {
   const handleIcons = (name: string) => {
     switch (name) {
       case "Total Revenue":
-        return <DollarSign size={24} />;
+        return <DollarSign size={18} />;
       case "Subscriptions":
-        return <Users size={24} />;
+        return <Users size={18} />;
       case "Sales":
-        return <CreditCard size={24} />;
+        return <CreditCard size={18} />;
       case "Active Now":
-        return <Activity size={24} />;
+        return <Activity size={18} />;
     }
   };
 
@@ -74,6 +134,27 @@ const page = (props: Props) => {
             </CardFooter>
           </Card>
         ))}
+      </div>
+      <div className="flex gap-5">
+        <div className="w-2/3">
+          <GorwthChart />
+        </div>
+        <div className="border w-1/3 px-3 pt-4 rounded-lg ">
+          <h2 className="text-lg font-semibold">Recent Sales</h2>
+          <p className="text-sm text-gray-500 pb-4">
+            You made 288 sales this week.
+          </p>
+          <div className=" h-[540px] overflow-y-scroll">
+            {salesData.map((sale) => (
+              <SalesCard
+                name={sale.name}
+                email={sale.email}
+                amount={sale.amount}
+                key={sale.email}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
