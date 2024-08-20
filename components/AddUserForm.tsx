@@ -6,9 +6,11 @@ import { Button } from "./ui/button";
 import useAddCustomer from "@/hooks/useAddCustomer";
 import { toast } from "sonner";
 
-type Props = {};
+type Props = {
+  handleTrigger: any;
+};
 
-const AddUserForm = (props: Props) => {
+const AddUserForm = ({ handleTrigger }: Props) => {
   const [email, setEmail] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -28,6 +30,8 @@ const AddUserForm = (props: Props) => {
       phone,
       orders: parseInt(orders),
     });
+
+    handleTrigger(false);
   };
 
   return (

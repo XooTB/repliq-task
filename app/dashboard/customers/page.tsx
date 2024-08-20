@@ -1,3 +1,5 @@
+"use client";
+
 import AddUserForm from "@/components/AddUserForm";
 import CustomerList from "@/components/CustomerList";
 import { Button } from "@/components/ui/button";
@@ -10,11 +12,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {};
 
 const page = (props: Props) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="border rounded-lg px-5 py-10">
       <div className="flex w-full justify-between items-center">
@@ -24,7 +28,7 @@ const page = (props: Props) => {
             Take a look at your customers and what they're doing.{" "}
           </p>
         </div>
-        <Sheet>
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger>
             <Button>Add Customer</Button>
           </SheetTrigger>
@@ -37,7 +41,7 @@ const page = (props: Props) => {
                 </p>
               </SheetDescription>
             </SheetHeader>
-            <AddUserForm />
+            <AddUserForm handleTrigger={setOpen} />
           </SheetContent>
         </Sheet>
       </div>
